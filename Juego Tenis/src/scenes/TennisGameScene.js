@@ -417,13 +417,13 @@ export default class TennisGameScene extends Phaser.Scene {
     }
   }
   
+	
 	// Auto-start first serve
 	this.time.delayedCall(500, () => {
 	  if (this.isServing && this.ball.sprite.body.velocity.x === 0 && this.ball.sprite.body.velocity.y === 0) {
 	    this.serveBall();
 	  }
 	});
-
   createPowerExplosion(x, y) {
     // Create explosion particles
     for (let i = 0; i < 5; i++) {

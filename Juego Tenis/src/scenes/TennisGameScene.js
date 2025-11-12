@@ -458,6 +458,11 @@ export default class TennisGameScene extends Phaser.Scene {
     if (this.spaceKey.isUp) {
       this.spacePressed = false;
     }
+	  
+// Handle T key for hitting the ball
+if (this.input.keyboard.checkDown(this.input.keyboard.addKey('T'), 100)) {
+  this.simulateHit();
+}
 
     // Handle power shot input (X key) - only trigger once per press
     if (this.input.keyboard.checkDown(this.input.keyboard.addKey('X'), 300)) {

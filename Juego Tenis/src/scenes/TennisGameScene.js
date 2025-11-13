@@ -418,7 +418,7 @@ export default class TennisGameScene extends Phaser.Scene {
   }
   
 	
-	eatePowerExplosion(x, y) {
+	createPowerExplosion(x, y) {
     // Create explosion particles
     for (let i = 0; i < 5; i++) {
       const particle = this.add.rectangle(

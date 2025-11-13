@@ -1,10 +1,10 @@
 export const GAME_WIDTH = 400;
 export const GAME_HEIGHT = 800;
-export const BALL_SPEED = 300;
-export const PADDLE_SPEED = 6;
-export const AI_SPEED = 5;
+export const BALL_SPEED = 400;
+export const PADDLE_SPEED = 8;
+export const AI_SPEED = 6;
 export const BALL_SIZE = 10;
 export const PADDLE_WIDTH = 80;
 export const PADDLE_HEIGHT = 15;
-export const MAX_BALL_SPEED = 400;
-export const DIFFICULTY_MULTIPLIER = 1.2;
+export const MAX_BALL_SPEED = 550;
+export const DIFFICULTY_MULTIPLIER = 1.3;

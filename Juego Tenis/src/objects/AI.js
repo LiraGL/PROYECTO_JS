@@ -13,6 +13,7 @@ export default class AI {
     this.difficulty = difficulty;
     this.reactionDelay = Math.max(10 - difficulty * 2, 0);
     this.delayCounter = 0;
+    this.errorMargin = 40 / difficulty; // Add an error margin for more human-like movement
   }
 
   update(ballSprite) {
@@ -24,13 +25,16 @@ export default class AI {
     
     this.delayCounter = 0;
     
-    const ballX = ballSprite.x;
+    // Add a random error to the ball's position to make the AI less perfect
+    const error = (Math.random() - 0.5) * this.errorMargin;
+    const targetX = ballSprite.x + error;
+
     const paddleX = this.sprite.x;
     const threshold = 35 * (2 - this.difficulty * 0.5); // Harder = smaller threshold
 
-    if (ballX < paddleX - threshold && this.sprite.x > this.minX) {
+    if (targetX < paddleX - threshold && this.sprite.x > this.minX) {
       this.sprite.x -= this.speed;
-    } else if (ballX > paddleX + threshold && this.sprite.x < this.maxX) {
+    } else if (targetX > paddleX + threshold && this.sprite.x < this.maxX) {
       this.sprite.x += this.speed;
     }
   }
